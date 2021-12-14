@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Welcome | {% endblock %}
+
+{% block content %}
+
+    <div class="align-item-center py-4">
+        <h3>Your guide to the best you</h3>
+    </div>
+
+    <div class="container center">
+        <a href="{% url 'frontpage' %}" class="buttn btn btn-dark mx-3">Women</a>
+        <a href="{% url 'frontpage' %}" class="buttn btn btn-dark">Men</a>
+    </div>
+
+   
+{% endblock %}

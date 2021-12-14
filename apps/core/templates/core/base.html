@@ -1,0 +1,329 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}{% endblock %}Buddy</title>
+
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+
+    <script src="{% static 'scripts/bootstrap.min.js' %}"></script>
+    <script src="{% static 'scripts/main.js' %}"></script>
+    <!--jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $(document).ready(function () {
+                $(".cl").hover(function () {
+                    $("._1CJsNLL").show();
+                }, function () {
+                    $("._1CJsNLL").hide();
+                });
+            });
+
+            $('div a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('Tar7aO0');
+
+            $("#sidenav").on("click", function (e) {
+                $("#side").addClass("_14pOwXD");
+                $("#aside").addClass("p7E3qDh");
+                e.stopPropagation()
+            });
+            $(document).on("click", function (e) {
+                if ($(e.target).is("#side") === false) {
+                    $("#side").removeClass("_14pOwXD");
+                    $("#aside").removeClass("p7E3qDh");
+                }
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="main-content">
+        <div class="main-content-accesible">
+            <div id="main-header">
+                <header>
+                    <div class="_3FDhT9y VTBBowk" data-testid="topbar">
+                        <div class="_2jtZkvR">
+                            <ul class="_1sqB8tC">
+                                <li>
+                                    <a href="{% url 'become_vendor' %}" data-testid="marketplace"
+                                        class="_1cQFCx2">Sell</a>
+                                </li>
+                                <li>
+                                    <a href="#" data-testid="help" class="_1cQFCx2">Help &amp; FAQs</a>
+                                </li>
+                                <li>
+                                    <div class="_25L--Pi" data-testid="country-selector">
+                                        <button class="w9hgW1d _19PGtzt" type="button">
+                                            <img src="https://assets.asosservices.com/storesa/images/flags/ng.png"
+                                                alt="Nigeria" class="RLpiNyQ">
+                                        </button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="_1I2c49V headroom-wrapper" style="height: 110px;">
+                        <div id="chrome-sticky-header" class="headroom headroom--unfixed">
+                            <div class="_3wSz5e5">
+                                <div class="_25fsaDO _2zC79ar" data-testid="header">
+                                    <div class="d1hfo3-">
+                                        <button class="_31ffwSC _1aufEaZ" id="sidenav"></button>
+                                        <a class="_24SZgSx _6DZZlcW" href="#" data-testid="asoslogo">
+                                            <svg class="_2M1Oheb" width="104" height="30" viewBox="0 0 104 30"
+                                                role="img" aria-labelledby="home-logo">
+                                                <title id="home-logo">ASOS logo, back to the Home Page</title>
+                                                <path fill="#FFF" fill-rule="evenodd"
+                                                    d="M71.83 21.983c-1.558 1.666-3.56 2.51-5.95 2.51-2.387 0-4.39-.844-5.947-2.51-1.488-1.587-2.343-4.124-2.343-6.96 0-2.766.864-5.27 2.37-6.867 1.572-1.667 3.565-2.516 5.92-2.523 2.36.007 4.35.856 5.924 2.523 1.506 1.598 2.37 4.1 2.37 6.867 0 2.836-.855 5.373-2.343 6.96zm-20.915-6.96c0 .128.005.255.008.38-2.39-2.166-5.845-2.974-7.957-3.394-3.907-.82-6.89-1.58-6.89-4.35 0-1.96 1.757-3.38 5.132-3.14 3.085.224 4.384 2.102 4.74 3.914.05.3.19.515.53.517l5.547.05c.026 0 .048-.003.072-.004-.783 1.816-1.182 3.84-1.182 6.015zM41.48 25.19c-2.683 0-5.64-.95-6.32-4.624-.06-.35-.225-.496-.495-.503l-5.364-.07v-9.446c.71 2.768 3.04 4.684 8.09 5.816 3.38.806 9.24 1.318 9.24 4.774 0 2.408-1.78 4.11-5.15 4.054zm-26.714-.69c-4.327 0-8.29-3.394-8.29-9.47 0-4.77 2.97-9.39 8.32-9.39 2.315 0 8.188.79 8.188 9.39 0 8.62-6.132 9.47-8.218 9.47zm65.922-11.792c1.232 1.636 3.453 2.848 7.063 3.657 3.38.805 9.25 1.318 9.25 4.775 0 2.403-1.78 4.11-5.15 4.05-2.68 0-5.64-.95-6.32-4.625-.052-.35-.22-.497-.49-.504L80.06 20c.523-1.54.79-3.21.79-4.974 0-.793-.056-1.566-.16-2.317zM91.474 30c5.95 0 12.965-2.208 12.416-9.366-.606-6.355-7.244-7.964-10.562-8.625-3.907-.82-6.892-1.58-6.892-4.35 0-1.96 1.758-3.38 5.134-3.14 3.084.224 4.384 2.102 4.74 3.914.05.3.19.515.53.517l5.546.048c.422.002.554-.216.5-.516C101.8 1.874 96.246 0 91.133 0 86.03 0 79.88 1.43 79.443 7.754c-.015.246-.02.486-.02.722-.814-1.683-1.985-3.23-3.495-4.597C73.142 1.37 69.666.03 65.878 0h-.127c-1.81 0-3.58.333-5.26.99a15.26 15.26 0 0 0-4.65 2.888c-1.43 1.295-2.56 2.747-3.36 4.327C51.27 1.822 45.81 0 40.77 0 36.084 0 30.517 1.208 29.3 6.305v-5.06a.49.49 0 0 0-.49-.488h-5.224c-.27 0-.49.22-.49.49V2.61c0 .23-.155.31-.343.175-1.858-1.34-4.607-2.782-7.915-2.782-1.86 0-3.635.326-5.277.968-1.64.65-3.2 1.63-4.64 2.92C3.29 5.37 2.05 7.05 1.23 8.9.417 10.742 0 12.807 0 15.027 0 17.1.367 19.043 1.088 20.8c.722 1.756 1.82 3.382 3.267 4.83 1.446 1.45 3.063 2.553 4.804 3.276 1.74.722 3.66 1.09 5.7 1.09 3.51 0 6.15-1.493 7.88-2.85.19-.144.342-.067.342.17v1.435c0 .27.22.49.49.49H28.8c.27 0 .49-.22.49-.49v-4.83C31.766 29.7 38.04 30 41.113 30c5.137 0 11.06-1.647 12.234-6.7.55.818 1.192 1.597 1.924 2.33 2.8 2.807 6.47 4.316 10.62 4.362h.17c1.97 0 3.87-.377 5.648-1.12a14.82 14.82 0 0 0 4.79-3.242 15.25 15.25 0 0 0 2.594-3.43c1.86 7.438 9.035 7.8 12.387 7.8z">
+                                                </path>
+                                            </svg>
+                                        </a>
+                                        <ul class="_1gfpvjl _2Q6RfP3" data-testid="floornav">
+                                            <li>
+                                                <a class="TO7hyVB _3B0kHbC _3AH1eDT" id="women-floor"
+                                                    href="{% url 'women' %}">WOMEN</a>
+                                            </li>
+                                            <li>
+                                                <a class="TO7hyVB _3B0kHbC _3AH1eDT" id="men-floor"
+                                                    href="{% url 'men' %}">MEN</a>
+                                            </li>
+                                        </ul>
+                                        <div class="_36m0W_u">
+                                            <div class="_1Pn6oie"></div>
+                                            <form action="{% url 'search' %}" class="_3j_6oNg">
+                                                <div class="h-7-BEq">
+                                                    <label for="chrome-search">
+                                                        <span class="BtNRzoN _3wDTlhS">Search for items and
+                                                            brands</span>
+                                                        <input type="search" id="chrome-search" name="query"
+                                                            class="Cyuazsm _1LCOtZ3 SJwm9Lx" autocomplete="off"
+                                                            placeholder="Search for items and brands" maxlength="150">
+                                                        <span class="_2ARPr_X"></span>
+                                                    </label>
+                                                    <button class="kH5PAAC" type="submit" disabled="">
+                                                        <svg viewBox="0 0 17 17" role="img"
+                                                            aria-labelledby="search-icon">
+                                                            <title id="search-icon">Search</title>
+                                                            <path fill="currentColor" fill-rule="nonzero"
+                                                                d="M7.65 15.3a7.65 7.65 0 1 1 5.997-2.9c-.01.012 3.183 3.297 3.183 3.297l-1.22 1.18s-3.144-3.283-3.154-3.275A7.618 7.618 0 0 1 7.65 15.3zm0-2a5.65 5.65 0 1 0 0-11.3 5.65 5.65 0 0 0 0 11.3z">
+                                                            </path>
+                                                        </svg>
+                                                    </button>
+                                                    <section class="NOZiOAo"></section>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <ul class="_3fERfnD" data-testid="widgets">
+                                        <li class="_3Wo6fpk mD8oZFx">
+                                            <div>
+                                                <div>
+                                                    <div id="myAccountDropdown" class="_3iG3MJz jPP-Skd"
+                                                        role="presentation">
+                                                        <button type="button" icon="_3iH_8F6"
+                                                            data-testid="myAccountIcon" class="_6iPIuvw _2SSHFPv"
+                                                            id="myaccount-dropdown">
+                                                            <span type="accountUnfilled"
+                                                                class="_3iH_8F6 -rhP1cz gBrrjX4 _2nHArcS"></span>
+                                                        </button>
+                                                        <div class="Gmnwu_e" aria-labelledby="myaccount-dropdown">
+                                                            <div class="_33s2s-y">
+                                                                <div class="Z8dxicz">
+                                                                    <div class="_10AVfLf _23LM9fc">
+                                                                        <div class="_3dfrZFm">
+                                                                            <div class="_3hSCfS2">
+                                                                                <span class="k3_c4ux">
+                                                                                    <a class="_1336dMe _1uUU2Co _1336dMe _1uUU2Co"
+                                                                                        href="{% url 'login' %}?next={{request.path}}">Sign
+                                                                                        In</a>
+                                                                                    <div class="_3xmyjOP"></div>
+                                                                                    <a class="_1336dMe _1uUU2Co _1336dMe _1uUU2Co"
+                                                                                        href="#">Join</a>
+                                                                                </span>
+                                                                            </div>
+                                                                            <button icon="_1xgEXu7" class="_6iPIuvw"
+                                                                                type="button">
+                                                                                <span
+                                                                                    class="_1xgEXu7 -rhP1cz gBrrjX4 _2nHArcS"></span>
+                                                                            </button>
+                                                                        </div>
+                                                                        <ul class="_12ChTgQ">
+                                                                            <li>
+                                                                                <a href="#"
+                                                                                    class="yPAUReS IAtMKef _2LRr-ij _37wOqxg"
+                                                                                    data-testid="myaccount-link">My
+                                                                                    Account</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#"
+                                                                                    class="yPAUReS IAtMKef _2LRr-ij _37wOqxg"
+                                                                                    data-testid="myorders-link">My
+                                                                                    Orders</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#"
+                                                                                    class="yPAUReS IAtMKef _2LRr-ij _2W-DtGN">Returns
+                                                                                    Information</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="{% url 'logout' %}"
+                                                                                    class="yPAUReS IAtMKef _2LRr-ij _2jqSWSL">Log
+                                                                                    out</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                        </li>
+                                        <li class="_3Wo6fpk">
+                                            <a href="{% url 'cart' %}" icon="AckDUvD" icontype="bagUnfilled"
+                                                class="_6iPIuvw _2SSHFPv"
+                                                aria-label="Bag {% if cart %} ({{ cart|length }}){% endif %} items">
+                                                <span type="bagUnfilled"
+                                                    class="AckDUvD -rhP1cz gBrrjX4 _2nHArcS"></span>
+                                            </a>
+                                        </li>
+                                        <li class="_3Wo6fpk">
+                                            <a type="a" href="#" icon="AckDUvD" icontype="bagUnfilled"
+                                                class="_6iPIuvw _2SSHFPv" aria-label="Bag 0 items">
+                                                <span type="bagUnfilled"
+                                                    class="AckDUvD -rhP1cz gBrrjX4 _2nHArcS"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="_8EFahPg">
+                                <div>
+                                    <nav class="_3EAPxMS" data-testid="primarynav-large">
+                                        <div class="srMPwPy">
+                                            <div class="_3C_NQPb">
+                                                {% for category in men_menu %}
+                                                    {% if not category.children.all %}
+                                                        <a href='#' class='menu _2syfS2P otVu6ZN'>{{category.title}}</a>
+                                                    {% else %}
+                                                        <div class='cl'>
+                                                            <button class="_2syfS2P _1njuHQk otVu6ZN"
+                                                                data-testid="primarynav-button">
+                                                                <span class="f3gYf7g">
+                                                                    <span>{{category.title}}</span>
+                                                                </span>
+                                                            </button>
+                                                            <div class="_238FTjh">
+                                                                <div class="_2yreb5T" data-testid="secondarynav-container">
+                                                                    <div class="_2u0LGMW">
+                                                                        <ul class="_1WUweTj" data-testid="secondarynav-flyout">
+                                                                            <li class="_1g1PWkA _2SQx27S">
+                                                                                <h2 id="shop-by-product-a11" class="_32FGkaZ _1P4vJYd">
+                                                                                    <span>SHOP BY PRODUCT</span>
+                                                                                </h2>
+                                                                                <ul aria-labelledby="shop-by-product-a11"
+                                                                                    class="_1PXCics">
+                                                                                    {% for subcategory in category.children.all %}
+                                                                                        {% if  url_part == 'men' %}
+                                                                                            {% if subcategory.attribute.slug != 'women' %}
+                                                                                                <li>
+                                                                                                    <a class="_1cjL45H _2Y7IAa_ CLdGn9X _1XjY6Zd" href="{% url 'category' url_part subcategory.slug %}">{{subcategory.title}}</a>
+                                                                                                </li>
+                                                                                            {% endif %}
+                                                                                        {% elif url_part == 'women' %}
+                                                                                            {% if subcategory.attribute.slug != 'men' %}
+                                                                                                <li>
+                                                                                                    <a class="_1cjL45H _2Y7IAa_ CLdGn9X _1XjY6Zd" href="{% url 'category' url_part subcategory.slug %}">{{subcategory.title}}</a>
+                                                                                                </li>
+                                                                                            {% endif %}
+                                                                                        {% endif %}
+                                                                                    {% endfor %}
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li class="_1g1PWkA _1rF5dEp">
+                                                                                <h2 id="shop-by-body-fit-a11" class="_32FGkaZ _1P4vJYd">
+                                                                                    <span>SHOP BY BODY FIT</span>
+                                                                                </h2>
+                                                                                <ul class="_2ln_EdE" aria-labelledby="shop-by-body-fit-a11">
+                                                                                    <li class="pMI_odE">
+                                                                                        <a href="#">
+                                                                                            <div class="v0bHlCs">
+                                                                                                <div aria-hidden="true" class="_2vdz4-W JRU0urF _2hPCTVi" role="presentation" title="Plus Size" style="background-image: url('https://images.asos-media.com/navigation/ww_sale_shopbyrange_plussize_2m_1600995?&$n_240w$');">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <span class="Af279Xy _23FAbpH _2fXw_A0">Plus Size</span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li class="pMI_odE">
+                                                                                        <a href="#">
+                                                                                            <div class="v0bHlCs">
+                                                                                                <div aria-hidden="true" class="_2vdz4-W JRU0urF _2hPCTVi" role="presentation" title="Tall" style="background-image: url('https://images.asos-media.com/navigation/ww_sale_shopbyrange_tall_2m_1582493?&$n_240w$');">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <span class="Af279Xy _23FAbpH _2fXw_A0">Tall</span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li class="_1g1PWkA _1rF5dEp">
+                                                                                <h2 id="shop-by-edit-a11" class="_32FGkaZ _1P4vJYd">
+                                                                                    <span>SHOP BY EDIT</span>
+                                                                                </h2>
+                                                                                <ul class="_1oG3guj" aria-labelledby="shop-by-edit-a11">
+                                                                                    <li class="_3QF73Dj">
+                                                                                        <a href="#">
+                                                                                            <div class="s230MSt">
+                                                                                                <div aria-hidden="true"
+                                                                                                    class="_1C2tKpW JRU0urF _2hPCTVi"
+                                                                                                    style="background-image: url('https://images.asos-media.com/navigation/mw_au_topman_480x480_200821?&$n_240w$');">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <span class="_3lfjYlZ _2nyXJLR _2trK-uN _1oL3gfq">Autumn styles</span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="_1CJsNLL" data-testid="backdrop"></div>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container py-4">
+            {% block content %}
+            {% endblock %}
+
+            <a href="{% url 'vendors' %}">Vendors</a>
+        </div>
+
+    </section>
+
+</body>
+
+</html>

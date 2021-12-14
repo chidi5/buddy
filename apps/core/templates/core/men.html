@@ -1,0 +1,106 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Men | {% endblock %}
+
+{% block header %}
+    <div class="_8EFahPg">
+        <div>
+            <nav class="_3EAPxMS" data-testid="primarynav-large">
+                <div class="srMPwPy">
+                    <div class="_3C_NQPb">
+                        {% for category in men_menu %}
+						    {% if not category.children.all %}
+                                <a href='#' class='menu _2syfS2P otVu6ZN'>{{category.title}}</a>
+                            {% else %}
+                                <div class='cl'>
+                                    <button class="_2syfS2P _1njuHQk otVu6ZN" data-testid="primarynav-button">
+                                        <span class="f3gYf7g">
+                                            <span>{{category.title}}</span>
+                                        </span>
+                                    </button>
+                                    <div class="_238FTjh">
+                                        <div class="_2yreb5T" data-testid="secondarynav-container">
+                                            <div class="_2u0LGMW">
+                                                <ul class="_1WUweTj" data-testid="secondarynav-flyout">
+                                                    <li class="_1g1PWkA _2SQx27S">
+                                                        <h2 id="shop-by-product-a11" class="_32FGkaZ _1P4vJYd">
+                                                            <span>SHOP BY PRODUCT</span>
+                                                        </h2>
+                                                        <ul aria-labelledby="shop-by-product-a11" class="_1PXCics">
+                                                            {% for subcategory in category.children.all %}
+                                                                {% if subcategory.attribute.slug != 'women' %}
+                                                                    <li>
+                                                                        <a class="_1cjL45H _2Y7IAa_ CLdGn9X _1XjY6Zd" href="{% url 'category' attribute_slug subcategory.slug %}">{{subcategory.title}}</a>
+                                                                    </li>
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </ul>
+                                                    </li>
+                                                    <li class="_1g1PWkA _1rF5dEp">
+                                                        <h2 id="shop-by-body-fit-a11" class="_32FGkaZ _1P4vJYd">
+                                                            <span>SHOP BY BODY FIT</span>
+                                                        </h2>
+                                                        <ul class="_2ln_EdE" aria-labelledby="shop-by-body-fit-a11">
+                                                            <li class="pMI_odE">
+                                                                <a href="https://www.asos.com/men/plus-size/cat/?cid=25997&nlid=mw|clothing|shop+by+body+fit|plus+size">
+                                                                    <div class="v0bHlCs">
+                                                                        <div aria-hidden="true" class="_2vdz4-W JRU0urF _2hPCTVi" role="presentation" title="Plus Size" style="background-image: url('https://images.asos-media.com/navigation/ww_sale_shopbyrange_plussize_2m_1600995?&$n_240w$');"></div>
+                                                                    </div>
+                                                                    <span class="Af279Xy _23FAbpH _2fXw_A0">Plus Size</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="pMI_odE">
+                                                                <a href="https://www.asos.com/men/tall/cat/?cid=20753&nlid=mw|clothing|shop+by+body+fit|tall">
+                                                                    <div class="v0bHlCs">
+                                                                        <div aria-hidden="true" class="_2vdz4-W JRU0urF _2hPCTVi" role="presentation" title="Tall" style="background-image: url('https://images.asos-media.com/navigation/ww_sale_shopbyrange_tall_2m_1582493?&$n_240w$');"></div>
+                                                                    </div>
+                                                                    <span class="Af279Xy _23FAbpH _2fXw_A0">Tall</span>
+                                                                </a>
+                                                            </li>
+                                                         </ul>
+                                                    </li>
+                                                    <li class="_1g1PWkA _1rF5dEp">
+                                                        <h2 id="shop-by-edit-a11" class="_32FGkaZ _1P4vJYd">
+                                                            <span>SHOP BY EDIT</span>
+                                                        </h2>
+                                                        <ul class="_1oG3guj" aria-labelledby="shop-by-edit-a11">
+                                                            <li class="_3QF73Dj">
+                                                                <a href="#">
+                                                                    <div class="s230MSt">
+                                                                        <div aria-hidden="true" class="_1C2tKpW JRU0urF _2hPCTVi" style="background-image: url('https://images.asos-media.com/navigation/mw_au_topman_480x480_200821?&$n_240w$');"></div>
+                                                                    </div>
+                                                                    <span class="_3lfjYlZ _2nyXJLR _2trK-uN _1oL3gfq">Autumn styles</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>                                            
+                                    </div>
+                                </div>
+                                <div class="_1CJsNLL" data-testid="backdrop"></div> 
+                            {% endif %}
+                        {% endfor %}  
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="align-item-center py-4">
+        <h3>Men Products</h3>
+        <h3>{{request.path}}</h3>
+    </div>
+    <div class="row">
+        {% for product in newest_products%}
+            {% include 'product/parts/list_item.html' %}
+        {% endfor %}
+    </div>
+    {% if request.user.is_authenticated %}
+        <a href="{% url 'vendor_admin' %}">Vendor admin</a>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{{ product.title }} | {% endblock %}
+
+{% block content %}
+    <h3>{{request.path}}</h3>
+    <div id="productapp">
+        {% if product.image %}
+            <figure class="image mb-6">
+                <img src="{{ product.image.url }}">
+            </figure>
+        {% endif %}
+    </div>
+
+    <h2 class="title">{{product.title}}, {{product.gender}}, N{{product.price}}</h2>
+
+    <p class="mb-6"><span class="tag btn-dark">{{ product.vendor }}</span></p>
+
+    <p>{{ product.description }}</p>
+
+    <hr>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="toast show align-items-center text-white bg-success border-0 mx-2 my-3" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; bottom: 0; right: 0; zIndex: 9999, float: "right"">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        {{ message }}
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <form class="position-relative me-auto" method='post' action=".">
+        {% csrf_token %}
+        <span style="position: relative; display: inline-block; direction: ltr;">
+            <input type="number" class="form-control ds-input" name="quantity" value='1' min="1" style="position: relative; vertical-align: top;">
+        </span>
+        <span>
+            <button class="btn btn-dark">Add to cart</button>
+        </span>
+    </form>
+
+    {% if similar_products %}
+        <hr>
+
+        <div class="row">
+            <div class="col-12">
+                <h2 class="subtitle">Similar products</h2>
+            </div>
+
+            {% for product in similar_products %}
+                {% include 'product/parts/list_item.html' %}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+{% endblock %}

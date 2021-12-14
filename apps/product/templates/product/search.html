@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Search | {% endblock %}
+
+{% block content %}
+
+    <div class="align-item-center py-4">
+        <h2>Search</h2>
+        <h3>Search term: "{{ query }}"</h3>
+    </div>
+
+    {% for product in products %}
+        {% include 'product/parts/list_item.html' %}
+    {% endfor %}   
+    {% if request.user.is_authenticated %}
+        <a href="{% url 'vendor_admin' %}">Vendor admin</a>
+    {% endif %}
+{% endblock %}
